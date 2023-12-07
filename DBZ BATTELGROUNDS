@@ -5,12 +5,16 @@ local Tab = Window:NewTab("Mechanics")
 local MainSection = Tab:NewSection("No CD")
 
 MainSection:NewKeybind("KAIOKEN", "", Enum.KeyCode.H, function()
-local args = {
-    [1] = "Transform"
-}
-
-game:GetService("Players").LocalPlayer:WaitForChild("Remote"):FireServer(unpack(args))
+    local args = {
+        [1] = "Transform"
+    }
     
+    game:GetService("Players").LocalPlayer.Character.Kaioken.Scripts.Handler.Remote:FireServer(unpack(args))
+    
+end)
+
+MainSection:NewKeybind("KAIOKEN", "", Enum.KeyCode.H, function()
+game:GetService("Players").LocalPlayer.Backpack["Kaioken Burst"].Name = "Kaioken"
 end)
 
 
