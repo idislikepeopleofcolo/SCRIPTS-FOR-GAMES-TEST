@@ -1,0 +1,38 @@
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
+local Window = Library.CreateLib("DBZ Battlegrounds", "Synapse")
+
+local Tab = Window:NewTab("Mechanics")
+local MainSection = Tab:NewSection("No CD")
+
+MainSection:NewKeybind("KAIOKEN", "", Enum.KeyCode.H, function()
+    local args = {
+        [1] = "Transform"
+    }
+    
+    game:GetService("Players").LocalPlayer.Character.Kaioken.Scripts.Handler.Remote:FireServer(unpack(args))
+    
+end)
+
+MainSection:NewKeybind("KAIOKEN", "", Enum.KeyCode.H, function()
+game:GetService("Players").LocalPlayer.Backpack["Kaioken Burst"].Name = "Kaioken"
+end)
+
+
+MainSection:NewKeybind("KAIOKEN EXTENSION", "", Enum.KeyCode.H, function()
+local args = {
+    [1] = "Charge"
+}
+
+game:GetService("Players").LocalPlayer:WaitForChild("Remote"):FireServer(unpack(args))
+
+end)
+
+MainSection:NewKeybind("Step Vanish", "", Enum.KeyCode.X, function()
+local args = {
+    [1] = "Step Vanish Start"
+}
+
+game:GetService("Players").LocalPlayer.Character.Scripts:FindFirstChild("Character Scripts"):FindFirstChild("State Handler").Event:FireServer(unpack(args))
+
+
+end)
